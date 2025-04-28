@@ -5,9 +5,10 @@ response keyword. using the response we .text() that information to get the text
 which we then change the html of the main.html file to the contents of our requested data.
 */
 function loadSocialsTemplate() {
+    console.log("fetching Socials Template data");
     fetch("templates/socialsTemplate.html")
-        .then(Response =>Response.text())
-        .then(html => {
+    .then(Response =>Response.text())
+    .then(html => {
             document.getElementById("main-page-content").innerHTML = html;
         })
         .catch(error => {
