@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact page for About Me Updated Project">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Me</h1>
+        <ul class="header-list">
+            <li><button onclick="loadSocialsTemplate()">Socials</button></li>
+            <li><button onclick="loadProjectsTemplate()">Projects</button></li>
+            <li><button ><a href="main.html">Home</a></button></li>
+        </ul>
+    </header>
+    <main>
+        <section>
+            <p>Feel free to reach out using the form below:</p>
+            <div id="contact-form">
+                <form action="/submit" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="contact-form-name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="contact-form-email" name="email" required>
+                <br>
+                <label for="contact-form-message">Message:</label>
+                <textarea id="message" name="message" rows="3" required></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
