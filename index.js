@@ -4,6 +4,20 @@ used in the templates folder. Then it returns a promise which we access using th
 response keyword. using the response we .text() that information to get the text within the page
 which we then change the html of the main.html file to the contents of our requested data.
 */
+
+function loadDashboardTemplate() {
+    console.log("fetching Dashboard Template data");
+    fetch("templates/dashboardTemplate.html")
+    .then(Response =>Response.text())
+    .then(html => {
+            document.getElementById("main-page-content").innerHTML = html;
+        })
+        .catch(error => {
+            console.error("Error loading specified template.", error);
+        });
+}
+loadDashboardTemplate();
+
 function loadSocialsTemplate() {
     console.log("fetching Socials Template data");
     fetch("templates/socialsTemplate.html")
