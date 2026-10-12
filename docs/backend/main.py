@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Form #for FastAPI framework
-from typing import Annotated 
+from typing import Annotated
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -16,6 +16,6 @@ class UserContactData(BaseModel):
 def root():
     return {"message": "Hello World"}
 
-@app.get("/contact")
+@app.post("/contact")
 async def receiveContact(data: Annotated[UserContactData, Form()]):
-    return {"data": data}
+    return {"user": data}

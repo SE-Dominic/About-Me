@@ -1,21 +1,18 @@
-const contactForm = document.getElementById("contact-form");
-
-contactForm.addEventListener('submit', async (event) => {
+document.getElementById("contact-form").contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const formData = new FormData(contactForm);
     try {
         const response = await fetch("http://127.0.0.1:8000/contact", {
             method: "POST",
-            body: FormData(contactForm),
+            body: FormData(event.target),
         });
         if (!response.ok) { //not 200
-            alert("[ERROR] RESPONSE ERROR: ", response.error);
+            alert("[ERROR] RESPONSE ERROR: ", response.statusText);
             return;
         }
-        alert("Contact api connection successful", response.status);
-        console.log(pack);
+        console.log(await response.json());
+        alert("Contact api connection successful: ", response.status);
     } catch(error) {
-        console.error("[ERROR]: Error fetching api.");
+        console.error("[ERROR]: Error fetching api\n", error);
         return;
     }
 })
