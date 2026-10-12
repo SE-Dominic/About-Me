@@ -90,20 +90,6 @@ main {
     padding: 3.5rem 0 5rem;
 }
 
-main > img {
-    float: left;
-    display: block;
-    width: min(36vw, 22rem);
-    height: min(36vw, 22rem);
-    margin: 0 3rem 2rem 0;
-    border: 6px solid var(--sage-dark);
-    border-radius: 50%;
-    background: var(--surface-raised);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-    object-fit: cover;
-    object-position: center top;
-}
-
 main > p {
     min-height: 23rem;
     margin: 0;
@@ -253,15 +239,6 @@ footer {
 
     table {
         min-width: 720px;
-    }
-}
-
-@media (max-width: 440px) {
-    main > img {
-        float: none;
-        width: min(78vw, 19rem);
-        height: min(78vw, 19rem);
-        margin: 0 auto 1.5rem;
     }
 }
 
