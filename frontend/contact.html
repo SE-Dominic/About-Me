@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact</title>
+    <style>
+		:root {
+			color-scheme: dark;
+			--background: #151b19;
+			--surface: #1c2421;
+			--surface-raised: #232d29;
+			--ink: #edf0e9;
+			--muted: #a7b1a9;
+			--line: #35413b;
+			--sage: #a7c3aa;
+			--sage-dark: #263a31;
+			--copper: #d09b78;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			display: grid;
+			min-height: 100vh;
+			min-height: 100dvh;
+			margin: 0;
+			padding: 1.5rem;
+			place-items: center;
+			color: var(--ink);
+			background:
+				radial-gradient(ellipse at 82% 0%, rgba(66, 91, 74, 0.22), transparent 35rem),
+				var(--background);
+			font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+			line-height: 1.6;
+		}
+
+		form {
+			width: min(100%, 34rem);
+			padding: clamp(1.5rem, 6vw, 3rem);
+			border: 1px solid var(--line);
+			border-top: 3px solid var(--sage);
+			border-radius: 6px;
+			background: var(--surface);
+			box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+		}
+
+		form::before {
+			display: block;
+			margin-bottom: 1.75rem;
+			color: var(--ink);
+			content: "Get in touch";
+			font-family: Georgia, "Times New Roman", serif;
+			font-size: 2rem;
+			line-height: 1.2;
+		}
+
+		form br {
+			display: none;
+		}
+
+		label {
+			display: block;
+			margin: 1.1rem 0 0.45rem;
+			color: var(--muted);
+			font-size: 0.92rem;
+			font-weight: 600;
+		}
+
+		input,
+		textarea {
+			display: block;
+			width: 100%;
+			padding: 0.8rem 0.9rem;
+			border: 1px solid var(--line);
+			border-radius: 4px;
+			background: var(--surface-raised);
+			color: var(--ink);
+			font: inherit;
+		}
+
+		textarea {
+			min-height: 9rem;
+			resize: vertical;
+		}
+
+		input:focus-visible,
+		textarea:focus-visible {
+			border-color: var(--sage);
+			outline: 2px solid var(--sage);
+			outline-offset: 2px;
+		}
+
+		button {
+			display: block;
+			min-width: 9rem;
+			margin: 1.75rem auto 0;
+			padding: 0.75rem 1.5rem;
+			border: 1px solid var(--sage);
+			border-radius: 4px;
+			background: var(--sage-dark);
+			color: var(--ink);
+			font: inherit;
+			font-weight: 600;
+			cursor: pointer;
+			transition: background-color 160ms ease, border-color 160ms ease;
+		}
+
+		button:hover {
+			border-color: var(--copper);
+			background: #34443a;
+		}
+
+		button:focus-visible {
+			outline: 2px solid var(--copper);
+			outline-offset: 3px;
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			button {
+				transition: none;
+			}
+		}
+    </style>
+</head>
+<body>
+	<form>
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name" required>
+        <br><br>
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" required>
+        <br><br>
+		<label for="message">Message</label>
+		<textarea id="message" name="message" rows="5" required></textarea>
+        <br><br>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
