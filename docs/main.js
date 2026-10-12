@@ -2,7 +2,6 @@ const contactForm = document.getElementById("contact-form");
 
 contactForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const formData = new FormData(contactForm);
     try {
         const response = await fetch("http://127.0.0.1:8000/contact", {
             method: "POST",
