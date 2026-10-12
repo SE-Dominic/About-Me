@@ -90,12 +90,27 @@ main {
     padding: 3.5rem 0 5rem;
 }
 
-main > p {
-    min-height: 23rem;
+.intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.intro img {
+    display: block;
+    width: 100%;
+    max-height: 32rem;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+}
+
+.intro p {
     margin: 0;
     padding: 1.25rem 0 2rem;
     color: #c3cbc4;
-    font-size: clamp(1.05rem, 1.35vw, 1.18rem);
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
     line-height: 1.9;
 }
 
@@ -215,17 +230,14 @@ footer {
         padding-top: 2.25rem;
     }
 
-    main > img {
-        width: min(62vw, 19rem);
-        height: min(62vw, 19rem);
-        margin-right: 1.5rem;
-        margin-bottom: 1rem;
+    .intro {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 1.5rem;
     }
 
-    main > p {
-        min-height: 0;
+    .intro p {
         padding-top: 0.25rem;
-        font-size: 1rem;
+        font-size: clamp(1rem, 2.5vw, 1.15rem);
         line-height: 1.8;
     }
 
@@ -239,6 +251,22 @@ footer {
 
     table {
         min-width: 720px;
+    }
+}
+
+@media (max-width: 520px) {
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .intro img {
+        width: min(72vw, 19rem);
+        justify-self: center;
+    }
+
+    .intro p {
+        font-size: 1.05rem;
     }
 }
 
