@@ -9,8 +9,10 @@ document.getElementById("contact-form").contactForm.addEventListener("submit", a
             alert("[ERROR] RESPONSE ERROR: ", response.statusText);
             return;
         }
-        console.log(await response.json());
-        alert("Contact api connection successful: ", response.status);
+        let jsonData = await response.json();
+        console.log(jsonData);
+        window.location.href="/docs/index.html";
+        return;
     } catch(error) {
         console.error("[ERROR]: Error fetching api\n", error);
         return;
